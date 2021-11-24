@@ -46,18 +46,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enable Virtual Stick"
+        android:text="使用虚拟遥控器"
         style="@style/common_button"
         android:id="@+id/btn_enable_virtual_stick"
         android:layout_marginLeft="5dp"
-        android:layout_alignTop="@+id/btn_start_simulator"
-        android:layout_alignStart="@+id/directionJoystickLeft"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="100dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Disable Virtual Stick"
+        android:text="关闭虚拟遥控器"
         style="@style/common_button"
         android:id="@+id/btn_disable_virtual_stick"
         android:layout_below="@+id/btn_enable_virtual_stick"
@@ -68,7 +66,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Take Off"
+        android:text="起飞"
         style="@style/common_button"
         android:id="@+id/btn_take_off"
         android:layout_alignTop="@+id/btn_disable_virtual_stick"
@@ -80,11 +78,10 @@
         android:id="@+id/btn_start_simulator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Simulator"
-        android:textOff="Start Simulator"
-        android:textOn="Stop Simulator"
+        android:text="开始遥控"
+        android:textOff="开始遥控"
+        android:textOn="停止遥控"
         style="@style/common_button"
-        android:layout_below="@+id/textview_simulator"
         android:layout_toEndOf="@+id/btn_enable_virtual_stick"
         android:layout_marginTop="107dp"
         android:layout_marginLeft="10dp" />
@@ -92,16 +89,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Land"
+        android:text="自动降落"
         style="@style/common_button"
         android:id="@+id/btn_land"
         android:layout_alignTop="@+id/btn_take_off"
         android:layout_marginTop="0dp"
-        android:layout_alignEnd="@+id/directionJoystickRight"
         android:layout_toEndOf="@+id/btn_take_off"
         android:layout_marginLeft="10dp" />
 
-    <com.dji.simulatorDemo.OnScreenJoystick
+    <com.example.administrator.testz.utils.OnScreenJoystick
         android:id="@+id/directionJoystickLeft"
         android:layout_width="130dp"
         android:layout_height="130dp"
@@ -111,7 +107,7 @@
         android:layout_marginLeft="10dp"
         android:background="@mipmap/joystick_bg"/>
 
-    <com.dji.simulatorDemo.OnScreenJoystick
+    <com.example.administrator.testz.utils.OnScreenJoystick
         android:id="@+id/directionJoystickRight"
         android:layout_width="130dp"
         android:layout_height="130dp"

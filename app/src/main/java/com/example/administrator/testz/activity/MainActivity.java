@@ -684,6 +684,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                     mFinishedAction = WaypointMissionFinishedAction.AUTO_LAND;
                 } else if (checkedId == R.id.finishToFirst) {
                     mFinishedAction = WaypointMissionFinishedAction.GO_FIRST_WAYPOINT;
+                } else if (checkedId == R.id.continue_unit) {
+                    //完成任务后，航点任务不直接进入结束状态，此时还可以通过Virtual Stick虚拟摇杆以原路返回的方式把飞机拉回到之前的航点，
+                    //  如果用户想结束任务，必须调用stopMission接口来结束。
+                    mFinishedAction = WaypointMissionFinishedAction.CONTINUE_UNTIL_END;
                 }
             }
         });
@@ -816,7 +820,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STOP_RECORD, 1000));
                         break;
 //                    case 4:
-//                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH,
+//                        waypointMissionBuilder.getWaypointList ().get(i).addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH,
 //                                randomGenerator.nextInt() % 45 - 45));
 //                        break;
 //                    case 5:
@@ -908,13 +912,5 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-    }
-
-    public void showToast(final String msg) {
-        runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }

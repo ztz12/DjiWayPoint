@@ -15,7 +15,7 @@ android {
             try {
                 //发布版本签名
                 //路径要写成完整的路径
-                storeFile file("/Users/zhangtianzhu/Downloads/DjiWayPoint-master/keystore/release-keystore.jks")
+                storeFile file("/Users/zhangtianzhu/Downloads/DJI Project/DjiWayPoint/keystore/release-keystore.jks")
                 storePassword "qwedsa"
                 keyAlias "release"
                 keyPassword "qwedsa"
@@ -25,7 +25,7 @@ android {
         }
 
         debug {
-            storeFile file("/Users/zhangtianzhu/Downloads/DjiWayPoint-master/keystore/debug-keystore.jks")
+            storeFile file("/Users/zhangtianzhu/Downloads/DJI Project/DjiWayPoint/keystore/debug-keystore.jks")
             storePassword "qwedsa"
             keyAlias "debug"
             keyPassword "qwedsa"

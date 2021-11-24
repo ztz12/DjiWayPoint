@@ -123,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="5pt"
-                android:text="返回返航点"/>
+                android:text="回家"/>
             <RadioButton
                 android:id="@+id/finishAutoLanding"
                 android:layout_width="wrap_content"
@@ -135,7 +135,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="5pt"
-                android:text="回第一个航点悬停"/>
+                android:text="回第一悬停"/>
+            <RadioButton
+                android:id="@+id/continue_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="5pt"
+                android:text="虚拟遥感"
+                android:visibility="gone"/>
         </RadioGroup>
     </LinearLayout>
 

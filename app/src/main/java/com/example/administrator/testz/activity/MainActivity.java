@@ -119,6 +119,33 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private LiveStreamManager.OnLiveChangeListener listener;
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_point);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(DJISampleApplication.FLAG_CONNECTION_CHANGE);
+        registerReceiver(mReceiver, filter);
+
+        mapView = (MapView) findViewById(R.id.map);
+        mapView.onCreate(savedInstanceState);
+        waypointList = new ArrayList<>();
+
+        initMapView();
+        initUI();
+        addListener();
+
+        mReceivedVideoDataCallBack = new VideoFeeder.VideoDataListener() {
+
+            @Override
+            public void onReceive(byte[] videoBuffer, int size) {
+                if (mCodecManager != null) {
+                    mCodecManager.sendDataToDecoder(videoBuffer, size);
+                }
+            }
+        };
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         initFlightController();
@@ -175,6 +202,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         Button rise = findViewById(R.id.rise);
         Button descend = findViewById(R.id.descend);
         Button gimbal_stop = findViewById(R.id.gimbal_stop);
+        Button btnSimulator = findViewById(R.id.btn_simulator);
 
         // init mVideoSurface
         mVideoSurface = findViewById(R.id.video_previewer_surface);
@@ -199,6 +227,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         descend.setOnClickListener(this);
         gimbal_stop.setOnClickListener(this);
         rtmp.setOnClickListener(this);
+        btnSimulator.setOnClickListener(this);
     }
 
     private void initMapView() {
@@ -242,33 +271,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                         });
             }
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_point);
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(DJISampleApplication.FLAG_CONNECTION_CHANGE);
-        registerReceiver(mReceiver, filter);
-
-        mapView = (MapView) findViewById(R.id.map);
-        mapView.onCreate(savedInstanceState);
-        waypointList = new ArrayList<>();
-
-        initMapView();
-        initUI();
-        addListener();
-
-        mReceivedVideoDataCallBack = new VideoFeeder.VideoDataListener() {
-
-            @Override
-            public void onReceive(byte[] videoBuffer, int size) {
-                if (mCodecManager != null) {
-                    mCodecManager.sendDataToDecoder(videoBuffer, size);
-                }
-            }
-        };
     }
 
     private void startStream() {
@@ -618,6 +620,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
             case R.id.rtmp_video:
                 startStream();
+                break;
+            case R.id.btn_simulator:
+                startActivity(new Intent(MainActivity.this, SimulatorActivity.class));
                 break;
             default:
                 break;

@@ -97,6 +97,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="视频推流" />
+
+        <Button
+            android:id="@+id/btn_simulator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="模拟遥控器" />
     </LinearLayout>
 
     <LinearLayout

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/bfcctv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:text="总电量:" />
+
+    <TextView
+        android:id="@+id/bcrtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bfcctv"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="9dp"
+        android:text="剩余能量:" />
+
+    <TextView
+        android:id="@+id/bcriptv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="69dp"
+        android:text="剩余电量百分比:" />
+
+    <TextView
+        android:id="@+id/bibctv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="101dp"
+        android:text="是否正在充电:" />
+
+    <TextView
+        android:id="@+id/bshstv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bcrtv"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="132dp"
+        android:text="自发热状态:" />
+
+    <TextView
+        android:id="@+id/bvtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bcrtv"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="166dp"
+        android:text="电压:" />
+
+    <TextView
+        android:id="@+id/bctv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bcrtv"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="195dp"
+        android:text="当前状态:" />
+
+    <TextView
+        android:id="@+id/blrtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="263dp"
+        android:text="剩余寿命:" />
+
+    <TextView
+        android:id="@+id/bttv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="232dp"
+        android:text="电池温度:" />
+
+    <TextView
+        android:id="@+id/bnodtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="204dp"
+        android:text="总放电次数:" />
+    <View
+        android:id="@+id/view_fgf"
+        android:background="#FF001EFF"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+    </View>
+
+    <TextView
+        android:id="@+id/tv_sn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="77dp"
+        android:layout_toEndOf="@+id/view_fgf"
+        android:text="SN:" />
+    <TextView
+        android:id="@+id/tv_create_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/view_fgf"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="47dp"
+        android:text="更新时间:" />
+
+    <TextView
+        android:id="@+id/tv_create_fre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="19dp"
+        android:layout_toEndOf="@+id/view_fgf"
+        android:text="刷新频率:" />
+</RelativeLayout>

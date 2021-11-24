@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_fc_info"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_mission_info"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_simulator"
+            style="@style/common_button"
+            android:layout_below="@id/tv_mission_info"
+            android:layout_toLeftOf="@+id/btn_set_maximum_altitude"
+            android:text="Start Simulator" />
+
+        <Button
+            android:id="@+id/btn_set_maximum_altitude"
+            style="@style/common_button"
+            android:layout_below="@id/tv_mission_info"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Set Max Altitude" />
+
+        <Button
+            android:id="@+id/btn_set_maximum_radius"
+            style="@style/common_button"
+            android:layout_below="@id/tv_mission_info"
+            android:layout_toRightOf="@+id/btn_set_maximum_altitude"
+            android:text="Set Max Radius" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_load"
+            style="@style/common_button"
+            android:layout_below="@id/btn_simulator"
+            android:layout_toLeftOf="@+id/btn_upload"
+            android:text="Load" />
+
+        <Button
+            android:id="@+id/btn_upload"
+            style="@style/common_button"
+            android:layout_below="@id/btn_simulator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Upload" />
+
+        <Button
+            android:id="@+id/btn_start"
+            style="@style/common_button"
+            android:layout_below="@id/btn_simulator"
+            android:layout_toRightOf="@+id/btn_upload"
+            android:text="Start" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_pause"
+            style="@style/common_button"
+            android:layout_below="@id/btn_load"
+            android:layout_toLeftOf="@+id/btn_resume"
+            android:text="Pause" />
+
+        <Button
+            android:id="@+id/btn_resume"
+            style="@style/common_button"
+            android:layout_below="@id/btn_load"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="Resume" />
+
+
+        <Button
+            android:id="@+id/btn_stop"
+            style="@style/common_button"
+            android:layout_below="@id/btn_load"
+            android:layout_toRightOf="@+id/btn_resume"
+            android:text="Stop" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_download"
+        style="@style/common_button"
+        android:layout_below="@id/btn_pause"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Download" />
+
+
+    <ProgressBar
+        android:id="@+id/pb_mission"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_pause"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginRight="20dp"
+        android:clickable="true"
+        android:max="100"
+        android:progress="0"
+        android:visibility="invisible" />
+
+</LinearLayout>

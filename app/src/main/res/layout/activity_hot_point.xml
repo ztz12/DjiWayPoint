@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+ >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hotPoint 启动的条件是，先要启动飞机，才能使用hotPoint去执行任务"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/hot_take_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="take off"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/start_hot_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="start hot point"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/stop_hot_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="stop hot point"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/twice_hot_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="twice_hot_point"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/start_hot_point_A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="start hot point A"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/start_hot_point_B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="start hot point B"
+        android:textAllCaps="false" />
+</LinearLayout>

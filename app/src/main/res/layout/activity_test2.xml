@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TestActivity">
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="login"
+        />
+
+    <Button
+        android:id="@+id/btn_way_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WayPoint"
+        />
+
+    <Button
+        android:id="@+id/btn_hot_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HotPoint"
+        />
+
+    <Button
+        android:id="@+id/btn_virtual_sticky_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Virtual Sticky"
+        />
+
+    <Button
+        android:id="@+id/btn_way_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        />
+
+</LinearLayout>

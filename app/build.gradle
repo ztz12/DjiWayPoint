@@ -1,0 +1,143 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenLocal()
+}
+
+android {
+    lintOptions {
+        checkReleaseBuilds false//报错不显示
+        abortOnError false//即使有报错也不会停止打包
+    }
+
+    signingConfigs {
+        release {
+            try {
+                //发布版本签名
+                //路径要写成完整的路径
+                storeFile file("/Users/zhangtianzhu/Downloads/DjiWayPoint-master/keystore/release-keystore.jks")
+                storePassword "qwedsa"
+                keyAlias "release"
+                keyPassword "qwedsa"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+
+        debug {
+            storeFile file("/Users/zhangtianzhu/Downloads/DjiWayPoint-master/keystore/debug-keystore.jks")
+            storePassword "qwedsa"
+            keyAlias "debug"
+            keyPassword "qwedsa"
+        }
+    }
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        multiDexEnabled true
+        ndk {
+            // On x86 devices that run Android API 23 or above, if the application is targeted with API 23 or
+            // above, FFmpeg lib might lead to runtime crashes or warnings.
+            abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release//设置签名信息
+        }
+
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug//设置签名信息
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+        }
+
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    packagingOptions {
+        doNotStrip "*/*/libdjivideo.so"
+        doNotStrip "*/*/libSDKRelativeJNI.so"
+        doNotStrip "*/*/libFlyForbid.so"
+        doNotStrip "*/*/libduml_vision_bokeh.so"
+        doNotStrip "*/*/libyuv2.so"
+        doNotStrip "*/*/libGroudStation.so"
+        doNotStrip "*/*/libFRCorkscrew.so"
+        doNotStrip "*/*/libUpgradeVerify.so"
+        doNotStrip "*/*/libFR.so"
+        doNotStrip "*/*/libDJIFlySafeCore.so"
+        doNotStrip "*/*/libdjifs_jni.so"
+        doNotStrip "*/*/libsfjni.so"
+        doNotStrip "*/*/libDJICommonJNI.so"
+        doNotStrip "*/*/libDJICSDKCommon.so"
+        doNotStrip "*/*/libDJIUpgradeCore.so"
+        doNotStrip "*/*/libDJIUpgradeJNI.so"
+        doNotStrip "*/*/libDJIWaypointV2Core.so"
+        doNotStrip "*/*/libAMapSDK_MAP_v6_9_2.so"
+        doNotStrip "*/*/libDJIMOP.so"
+        doNotStrip "*/*/libDJISDKLOGJNI.so"
+        exclude 'META-INF/rxjava.properties'
+        exclude 'assets/location_map_gps_locked.png'
+        exclude 'assets/location_map_gps_3d.png'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+dependencies {
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'com.squareup:otto:1.3.8'
+    implementation('com.dji:dji-sdk:4.15', {
+        /**
+         * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
+         * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
+         * is called.
+         * Both will greatly reduce the size of the APK.
+         */
+        exclude module: 'library-anti-distortion'
+        //exclude module: 'fly-safe-database'
+    })
+    implementation('com.dji:dji-uxsdk:4.13', {
+        exclude module: 'library-anti-distortion'
+        exclude module: 'dji-sdk'
+        //exclude module: 'fly-safe-database'
+    })
+    compileOnly 'com.dji:dji-sdk-provided:4.15'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.core:core:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-rc01'
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'io.netty:netty-all:4.1.38.Final'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'io.netty:netty-all:4.1.38.Final'
+    implementation 'com.amap.api:map2d:latest.integration'
+    implementation 'com.amap.api:3dmap:latest.integration'
+    implementation 'com.amap.api:location:3.3.0'
+    implementation 'com.amap.api:search:5.0.0'
+
+}

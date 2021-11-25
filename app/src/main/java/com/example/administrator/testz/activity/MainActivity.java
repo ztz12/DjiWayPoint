@@ -215,6 +215,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             ToastUtils.setResultToToast("status changed : " + i);
         };
 
+        findViewById(R.id.btn_mediaManager).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MediaManagerActivity.class));
+            }
+        });
 
         locate.setOnClickListener(this);
         add.setOnClickListener(this);
@@ -795,25 +801,25 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 waypointMissionBuilder.getWaypointList().get(i).altitude = altitude;
                 switch (i) {
                     case 0:
-                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 1000));
+                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 30000));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH,
                                 -90));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.START_TAKE_PHOTO, 1000));
                         break;
                     case 1:
-                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 1000));
+                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 30000));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH,
                                 0));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.START_TAKE_PHOTO, 1000));
                         break;
                     case 2:
-                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 1000));
+                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 30000));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH,
                                 -45));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.START_TAKE_PHOTO, 1000));
                         break;
                     case 3:
-                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 1000));
+                        waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.STAY, 30000));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.GIMBAL_PITCH,
                                 0));
                         waypointMissionBuilder.getWaypointList().get(i).addAction(new WaypointAction(WaypointActionType.START_RECORD, 1000));

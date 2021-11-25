@@ -169,6 +169,40 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
+            <dji.ux.widget.controls.CameraControlsWidget
+                android:id="@+id/CameraCapturePanel"
+                android:layout_alignParentRight="true"
+                android:layout_width="50dp"
+                android:layout_height="263dp"
+                tools:ignore="RtlHardcoded"/>
+
+
+            <dji.ux.panel.CameraSettingExposurePanel
+                android:layout_width="180dp"
+                android:layout_toLeftOf="@+id/CameraCapturePanel"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:layout_height="263dp"
+                tools:ignore="RtlHardcoded"/>
+
+            <dji.ux.panel.CameraSettingAdvancedPanel
+                android:layout_width="180dp"
+                android:layout_height="263dp"
+                android:layout_toLeftOf="@+id/CameraCapturePanel"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:visibility="invisible"
+                tools:ignore="RtlHardcoded"/>
+
+            <Button
+                android:id="@+id/btn_mediaManager"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:layout_alignStart="@+id/CameraCapturePanel"
+                android:layout_below="@id/CameraCapturePanel"
+                android:background="@drawable/playback" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

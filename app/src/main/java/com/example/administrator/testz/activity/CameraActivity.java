@@ -1,6 +1,7 @@
 package com.example.administrator.testz.activity;
 
 
+import android.graphics.PointF;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.os.Handler;
@@ -98,6 +99,31 @@ public class CameraActivity extends AppCompatActivity implements SurfaceTextureL
         Camera camera = DJISampleApplication.getCameraInstance();
 
         if (camera != null) {
+
+            //获取镜头对焦目标点
+            camera.getFocusTarget(new CommonCallbacks.CompletionCallbackWith<PointF>() {
+                @Override
+                public void onSuccess(PointF pointF) {
+
+                }
+
+                @Override
+                public void onFailure(DJIError djiError) {
+
+                }
+            });
+            //获取镜头对焦环值
+            camera.getFocusRingValue(new CommonCallbacks.CompletionCallbackWith<Integer>() {
+                @Override
+                public void onSuccess(Integer integer) {
+
+                }
+
+                @Override
+                public void onFailure(DJIError djiError) {
+
+                }
+            });
 
             camera.setSystemStateCallback(new SystemState.Callback() {
                 @Override
